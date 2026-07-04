@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Test Drive | DriveSpace</title>
+<meta name="description" content="Book a no-obligation test drive at DriveSpace. Choose your car, showroom, date and time online in under a minute.">
+<meta name="keywords" content="book test drive, EV test drive Manchester, electric car test drive booking">
+<link rel="canonical" href="https://www.drivespace.example/booking.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span>DriveSpace</a>
+    <nav class="main-nav" id="primary-navigation" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogue.html">Browse Cars</a></li>
+        <li><a href="configurator.html">Build & Price</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="finance.html">Finance</a></li>
+        <li><a href="booking.html">Book a Test Drive</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="booking.html" class="btn btn-accent btn-sm">Book a test drive</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-header">
+    <div class="container">
+      <p class="eyebrow">Book online</p>
+      <h1>Book a test drive</h1>
+      <p class="lede">No obligation, no pressure. Pick your car, showroom and a time that suits you.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="booking-layout">
+        <div>
+          <form id="bookingForm" novalidate>
+
+            <fieldset>
+              <legend>Your details</legend>
+
+              <div class="field" id="fieldName">
+                <label for="fullName">Full name</label>
+                <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+                <p class="field-error">Please enter your full name.</p>
+              </div>
+
+              <div class="field-row">
+                <div class="field" id="fieldEmail">
+                  <label for="email">Email address</label>
+                  <input type="email" id="email" name="email" autocomplete="email" required>
+                  <p class="field-error">Please enter a valid email address.</p>
+                </div>
+                <div class="field" id="fieldPhone">
+                  <label for="phone">Phone number</label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                  <p class="field-error">Please enter a valid UK phone number.</p>
+                </div>
+              </div>
+
+              <div class="field" id="fieldDob">
+                <label for="dob">Date of birth</label>
+                <input type="date" id="dob" name="dob" required>
+                <p class="field-hint">You must hold a full UK driving licence and be 17 or over to test drive.</p>
+                <p class="field-error" id="dobError">You must be at least 17 years old to book a test drive.</p>
+              </div>
+
+              <div class="field" id="fieldLicence">
+                <fieldset>
+                  <legend style="font-weight:600;font-size:0.9rem;">Do you hold a full UK driving licence?</legend>
+                  <div class="radio-grid">
+                    <label class="radio-option"><input type="radio" name="licence" value="yes" required> Yes, I hold a full licence</label>
+                    <label class="radio-option"><input type="radio" name="licence" value="provisional"> I hold a provisional licence</label>
+                  </div>
+                </fieldset>
+                <p class="field-error">Please tell us about your licence status.</p>
+              </div>
+
+              <p id="provisionalNote" style="display:none;background:rgba(217,162,75,0.12);border:1px solid rgba(217,162,75,0.3);border-radius:var(--radius-md);padding:0.8rem;font-size:0.88rem;">
+                With a provisional licence, an approved instructor or qualified driver must accompany you. Let us know in the notes field and we'll arrange this.
+              </p>
+            </fieldset>
+
+            <fieldset>
+              <legend>Your test drive</legend>
+
+              <div class="field" id="fieldVehicle">
+                <label for="vehicleSelect">Which car would you like to drive?</label>
+                <select id="vehicleSelect" name="vehicle" required><option value="">Loading models&hellip;</option></select>
+              </div>
+
+              <div class="field" id="fieldShowroom">
+                <label for="showroom">Showroom location</label>
+                <select id="showroom" name="showroom" required>
+                  <option value="">Select a showroom&hellip;</option>
+                  <option value="manchester-oxford-road">Manchester &ndash; Oxford Road</option>
+                  <option value="manchester-trafford">Manchester &ndash; Trafford Park</option>
+                  <option value="stockport">Stockport</option>
+                </select>
+                <p class="field-error">Please choose a showroom.</p>
+              </div>
+
+              <div class="field-row">
+                <div class="field" id="fieldDate">
+                  <label for="bookingDate">Preferred date</label>
+                  <input type="date" id="bookingDate" name="bookingDate" required>
+                  <p class="field-error">Please choose a date at least 1 day from today.</p>
+                </div>
+                <div class="field" id="fieldTime">
+                  <label for="bookingTime">Preferred time</label>
+                  <select id="bookingTime" name="bookingTime" required>
+                    <option value="">Select a time&hellip;</option>
+                    <option value="09:30">9:30am</option>
+                    <option value="11:00">11:00am</option>
+                    <option value="13:00">1:00pm</option>
+                    <option value="14:30">2:30pm</option>
+                    <option value="16:00">4:00pm</option>
+                  </select>
+                  <p class="field-error">Please choose a time.</p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="notes">Anything we should know? (optional)</label>
+                <textarea id="notes" name="notes" rows="3"></textarea>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-accent btn-block">Confirm test drive</button>
+          </form>
+
+          <div class="success-box" id="successBox" role="status" aria-live="polite">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            <h3>Test drive requested</h3>
+            <p id="successDetails"></p>
+            <a href="index.html" class="btn btn-ghost">Back to home</a>
+          </div>
+        </div>
+
+        <aside class="booking-summary-card" aria-labelledby="bookingHelpHeading">
+          <h3 id="bookingHelpHeading" style="font-size:var(--step-1);">What to expect</h3>
+          <ul class="best-for-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Takes about 30&ndash;40 minutes including a walkaround.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Bring your driving licence (photocard and paper counterpart if you have one).</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>No deposit or payment required to test drive.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>We'll confirm your slot by email within one working day.</span></li>
+          </ul>
+          <hr class="divider">
+          <p style="font-size:0.85rem;color:var(--sage);margin-bottom:0;">Prefer to talk first? Use our <a href="finance.html">finance calculator</a> or <a href="compare.html">comparison tool</a> before you book.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="color:var(--paper);"><span class="brand-mark" aria-hidden="true"></span>DriveSpace</a>
+        <p style="color:var(--sage-light);margin-top:1rem;max-width:32ch;">A Manchester showroom built around one job: helping you choose your first &mdash; or next &mdash; electric or hybrid car with confidence.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="catalogue.html">Browse cars</a></li>
+          <li><a href="configurator.html">Build & price</a></li>
+          <li><a href="compare.html">Compare models</a></li>
+          <li><a href="finance.html">Finance calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>DriveSpace</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="booking.html">Book a test drive</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit us</h4>
+        <ul>
+          <li>Oxford Road, Manchester</li>
+          <li>M1 5QA</li>
+          <li>Mon&ndash;Sat, 9am&ndash;6pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0;">&copy; 2026 DriveSpace. Coursework project for educational purposes &mdash; not a real dealership.</p>
+      <p style="margin:0;">All vehicle illustrations are original artwork. No real manufacturer data is used.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  /* ---------------------------------------------------------------------
+     Booking form validation.
+     Flowchart (see report for BCS-standard diagram):
+       START -> For each required field: is it filled/valid?
+         NO  -> show inline error, stop submit
+         YES -> continue to next field
+       -> Is date of birth such that age >= 17?
+         NO  -> show age error, stop submit
+         YES -> continue
+       -> All fields valid? -> show success message, stop further input
+     --------------------------------------------------------------------- */
+
+  const vehicleSelect = document.getElementById("vehicleSelect");
+  vehicleSelect.innerHTML = VEHICLES.map(v => `<option value="${v.id}">${v.name}</option>`).join("");
+
+  const params = new URLSearchParams(window.location.search);
+  const presetId = params.get("id");
+  if (presetId && getVehicleById(presetId)) vehicleSelect.value = presetId;
+
+  // Restrict booking date to tomorrow onward
+  const dateInput = document.getElementById("bookingDate");
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  dateInput.min = tomorrow.toISOString().split("T")[0];
+
+  // Show/hide provisional licence note based on selection (simple condition-based interactivity)
+  document.querySelectorAll('input[name="licence"]').forEach(radio => {
+    radio.addEventListener("change", () => {
+      const note = document.getElementById("provisionalNote");
+      note.style.display = radio.value === "provisional" && radio.checked ? "block" : "none";
+    });
+  });
+
+  function showError(fieldId, show) {
+    const field = document.getElementById(fieldId);
+    field.classList.toggle("invalid", show);
+  }
+
+  function calcAge(dobValue) {
+    const dob = new Date(dobValue);
+    const today = new Date();
+    let age = today.getFullYear() - dob.getFullYear();
+    const m = today.getMonth() - dob.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) age--;
+    return age;
+  }
+
+  function validateForm() {
+    let valid = true;
+
+    const name = document.getElementById("fullName").value.trim();
+    if (name.length < 2) { showError("fieldName", true); valid = false; } else showError("fieldName", false);
+
+    const email = document.getElementById("email").value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailOk) { showError("fieldEmail", true); valid = false; } else showError("fieldEmail", false);
+
+    const phone = document.getElementById("phone").value.trim();
+    const phoneOk = /^(\+44|0)[0-9\s]{9,12}$/.test(phone);
+    if (!phoneOk) { showError("fieldPhone", true); valid = false; } else showError("fieldPhone", false);
+
+    // CONDITION: date of birth must give an age of 17 or over
+    const dobValue = document.getElementById("dob").value;
+    const dobError = document.getElementById("dobError");
+    if (!dobValue) {
+      showError("fieldDob", true); valid = false;
+      dobError.textContent = "Please enter your date of birth.";
+    } else if (calcAge(dobValue) < 17) {
+      showError("fieldDob", true); valid = false;
+      dobError.textContent = "You must be at least 17 years old to book a test drive.";
+    } else {
+      showError("fieldDob", false);
+    }
+
+    const licenceChosen = document.querySelector('input[name="licence"]:checked');
+    if (!licenceChosen) { showError("fieldLicence", true); valid = false; } else showError("fieldLicence", false);
+
+    const showroom = document.getElementById("showroom").value;
+    if (!showroom) { showError("fieldShowroom", true); valid = false; } else showError("fieldShowroom", false);
+
+    const bookingDateValue = document.getElementById("bookingDate").value;
+    if (!bookingDateValue || bookingDateValue < dateInput.min) { showError("fieldDate", true); valid = false; } else showError("fieldDate", false);
+
+    const bookingTime = document.getElementById("bookingTime").value;
+    if (!bookingTime) { showError("fieldTime", true); valid = false; } else showError("fieldTime", false);
+
+    return valid;
+  }
+
+  const form = document.getElementById("bookingForm");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if (!validateForm()) {
+      const firstInvalid = form.querySelector(".invalid");
+      if (firstInvalid) firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
+    const v = getVehicleById(vehicleSelect.value);
+    const dateValue = document.getElementById("bookingDate").value;
+    const timeValue = document.getElementById("bookingTime").selectedOptions[0].textContent;
+    const niceDate = new Date(dateValue).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+
+    document.getElementById("successDetails").textContent =
+      `We've pencilled in ${v.name} on ${niceDate} at ${timeValue}. A confirmation email is on its way to ${document.getElementById("email").value.trim()}.`;
+
+    form.style.display = "none";
+    document.getElementById("successBox").classList.add("show");
+    document.getElementById("successBox").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Live re-validation once a field has been touched, for friendlier UX
+  form.querySelectorAll("input, select").forEach(el => {
+    el.addEventListener("blur", () => { if (form.dataset.attempted) validateForm(); });
+  });
+  form.addEventListener("submit", () => { form.dataset.attempted = "true"; });
+</script>
+</body>
+</html>

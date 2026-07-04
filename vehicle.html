@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Vehicle Details | DriveSpace</title>
+<meta name="description" id="pageDescription" content="View specifications, range, pricing and trims for this DriveSpace electric or hybrid car.">
+<link rel="canonical" href="https://www.drivespace.example/vehicle.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span>DriveSpace</a>
+    <nav class="main-nav" id="primary-navigation" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogue.html">Browse Cars</a></li>
+        <li><a href="configurator.html">Build & Price</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="finance.html">Finance</a></li>
+        <li><a href="booking.html">Book a Test Drive</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="booking.html" class="btn btn-accent btn-sm">Book a test drive</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <a href="catalogue.html">Browse cars</a> / <span id="breadcrumbName">Vehicle</span>
+  </nav>
+
+  <div id="vehicleContent"></div>
+
+  <section class="section-alt" aria-labelledby="related-heading">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Keep exploring</p>
+        <h2 id="related-heading">You might also like</h2>
+      </div>
+      <div class="grid-3" id="relatedGrid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="color:var(--paper);"><span class="brand-mark" aria-hidden="true"></span>DriveSpace</a>
+        <p style="color:var(--sage-light);margin-top:1rem;max-width:32ch;">A Manchester showroom built around one job: helping you choose your first &mdash; or next &mdash; electric or hybrid car with confidence.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="catalogue.html">Browse cars</a></li>
+          <li><a href="configurator.html">Build & price</a></li>
+          <li><a href="compare.html">Compare models</a></li>
+          <li><a href="finance.html">Finance calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>DriveSpace</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="booking.html">Book a test drive</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit us</h4>
+        <ul>
+          <li>Oxford Road, Manchester</li>
+          <li>M1 5QA</li>
+          <li>Mon&ndash;Sat, 9am&ndash;6pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0;">&copy; 2026 DriveSpace. Coursework project for educational purposes &mdash; not a real dealership.</p>
+      <p style="margin:0;">All vehicle illustrations are original artwork. No real manufacturer data is used.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id") || VEHICLES[0].id;
+  const v = getVehicleById(id) || VEHICLES[0];
+
+  document.title = `${v.name} | DriveSpace`;
+  document.getElementById("pageTitle").textContent = `${v.name} | DriveSpace`;
+  document.getElementById("pageDescription").setAttribute("content", `${v.name}: ${v.tagline} Range ${v.range} miles, from ${formatGBP(v.basePrice)}. View specs, trims and book a test drive.`);
+  document.getElementById("breadcrumbName").textContent = v.name;
+
+  const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>`;
+
+  document.getElementById("vehicleContent").innerHTML = `
+    <section class="detail-hero container">
+      <div>
+        <div class="tag-row" style="margin-bottom:0.8rem;">
+          <span class="pill ${v.powertrain === 'ev' ? 'pill-ev' : 'pill-hybrid'}">${v.powertrain === 'ev' ? 'Fully electric' : 'Plug-in hybrid'}</span>
+          <span class="pill">${v.bodyStyle}</span>
+          <span class="pill">${v.drivetrain}</span>
+        </div>
+        <h1>${v.name}</h1>
+        <p class="lede">${v.tagline}</p>
+        <p>${v.description}</p>
+
+        <h3 style="font-size:var(--step-1);font-family:var(--font-body);font-weight:700;margin-top:var(--space-md);">Best for</h3>
+        <ul class="best-for-list">
+          ${v.bestFor.map(b => `<li>${checkIcon}<span>${b}</span></li>`).join("")}
+        </ul>
+
+        <div class="detail-cta">
+          <a href="configurator.html?id=${v.id}" class="btn btn-accent">Build & price this car</a>
+          <a href="booking.html?id=${v.id}" class="btn btn-ghost">Book a test drive</a>
+          <a href="compare.html?ids=${v.id}" class="btn btn-ghost">Add to comparison</a>
+        </div>
+      </div>
+      <div>
+        <div class="detail-visual">
+          <img src="${v.image}" alt="Stylised illustration of the ${v.name}, a ${v.powertrain === 'ev' ? 'fully electric' : 'plug-in hybrid'} ${v.bodyStyle.toLowerCase()}" width="500" height="250">
+        </div>
+        <div class="detail-price-box">
+          <span class="from">Starting from</span>
+          <div class="amount">${formatGBP(v.basePrice)}</div>
+          <p class="pcp">Estimated from ${formatGBP(Math.round((v.basePrice * 0.9 * (1 + FINANCE_RATES.pcp.apr)) / 36))}/month on PCP &middot; <a href="finance.html?id=${v.id}" style="color:var(--brass);">calculate finance</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt" aria-labelledby="specs-heading">
+      <div class="container">
+        <h2 id="specs-heading">Specifications</h2>
+        <table class="spec-table">
+          <tbody>
+            <tr><th scope="row">Range (combined)</th><td>${v.range} miles</td></tr>
+            <tr><th scope="row">Battery</th><td>${v.battery} kWh</td></tr>
+            <tr><th scope="row">Home charge time (0&ndash;100%)</th><td>${v.chargeTime} hrs</td></tr>
+            ${v.rapidCharge ? `<tr><th scope="row">Rapid charge (10&ndash;80%)</th><td>${v.rapidCharge} mins</td></tr>` : ""}
+            <tr><th scope="row">0&ndash;60mph</th><td>${v.zeroToSixty} seconds</td></tr>
+            <tr><th scope="row">Top speed</th><td>${v.topSpeed} mph</td></tr>
+            <tr><th scope="row">Seats</th><td>${v.seats}</td></tr>
+            <tr><th scope="row">Drivetrain</th><td>${v.drivetrain}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="trims-heading">
+      <div class="container">
+        <h2 id="trims-heading">Available trims</h2>
+        <div class="grid-3">
+          ${v.trims.map(t => `
+            <div class="feature-card">
+              <h3 style="font-family:var(--font-body);font-size:var(--step-1);">${t.name}</h3>
+              <p style="color:var(--sage);">${t.blurb}</p>
+              <p style="font-family:var(--font-mono);font-size:1.1rem;">${t.priceAdd === 0 ? "Included" : "+" + formatGBP(t.priceAdd)}</p>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+  `;
+
+  // Related vehicles: same powertrain or body type, excluding current
+  const related = VEHICLES.filter(x => x.id !== v.id && (x.powertrain === v.powertrain || x.type === v.type)).slice(0, 3);
+  const fallback = VEHICLES.filter(x => x.id !== v.id).slice(0, 3);
+  const toShow = related.length ? related : fallback;
+
+  document.getElementById("relatedGrid").innerHTML = toShow.map(r => `
+    <article class="vehicle-card">
+      <div class="thumb"><img src="${r.image}" alt="Stylised illustration of the ${r.name}" width="400" height="200" loading="lazy"></div>
+      <div class="body">
+        <div class="tag-row">
+          <span class="pill ${r.powertrain === 'ev' ? 'pill-ev' : 'pill-hybrid'}">${r.powertrain === 'ev' ? 'Fully electric' : 'Plug-in hybrid'}</span>
+          <span class="pill">${r.bodyStyle}</span>
+        </div>
+        <h3>${r.name}</h3>
+        <p class="tagline">${r.tagline}</p>
+        <div class="price"><span class="from">From</span>${formatGBP(r.basePrice)}</div>
+        <div class="actions"><a href="vehicle.html?id=${r.id}" class="btn btn-primary btn-sm btn-block">View details</a></div>
+      </div>
+    </article>
+  `).join("");
+</script>
+</body>
+</html>
