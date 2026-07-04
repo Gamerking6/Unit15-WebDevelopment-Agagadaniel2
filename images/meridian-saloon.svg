@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylised illustration of a saloon car">
+  <rect width="400" height="200" fill="none"/>
+  <ellipse cx="200" cy="172" rx="160" ry="10" fill="#0B0E11" opacity="0.08"/>
+  
+            <path d="M30 152 Q30 122 65 118 L100 92 Q122 76 155 76 L245 76 Q272 76 290 96 L322 120 Q360 122 368 152 L368 167 L30 167 Z" fill="#1B2421"/>
+            <path d="M108 94 L140 80 L240 80 L268 96 Z" fill="#0B0E11" opacity="0.15"/>
+        
+  <circle cx="105" cy="167" r="22" fill="#15181A"/>
+  <circle cx="105" cy="167" r="10" fill="#7C8A8A"/>
+  <circle cx="305" cy="167" r="22" fill="#15181A"/>
+  <circle cx="305" cy="167" r="10" fill="#7C8A8A"/>
+</svg>

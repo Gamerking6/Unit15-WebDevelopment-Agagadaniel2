@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylised illustration of a hatch car">
+  <rect width="400" height="200" fill="none"/>
+  <ellipse cx="200" cy="172" rx="160" ry="10" fill="#0B0E11" opacity="0.08"/>
+  
+            <path d="M40 150 Q40 120 70 115 L110 90 Q130 75 160 75 L230 75 Q255 75 270 95 L300 115 Q340 118 350 150 L350 165 L40 165 Z" fill="#2F6D5C"/>
+            <path d="M118 92 L150 78 L225 78 L255 95 Z" fill="#0B0E11" opacity="0.15"/>
+        
+  <circle cx="105" cy="167" r="22" fill="#15181A"/>
+  <circle cx="105" cy="167" r="10" fill="#7C8A8A"/>
+  <circle cx="305" cy="167" r="22" fill="#15181A"/>
+  <circle cx="305" cy="167" r="10" fill="#7C8A8A"/>
+</svg>

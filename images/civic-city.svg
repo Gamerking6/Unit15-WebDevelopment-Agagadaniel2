@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylised illustration of a city car">
+  <rect width="400" height="200" fill="none"/>
+  <ellipse cx="200" cy="172" rx="160" ry="10" fill="#0B0E11" opacity="0.08"/>
+  
+            <path d="M48 150 Q48 124 75 120 L105 96 Q124 84 150 84 L210 84 Q232 84 245 100 L268 120 Q300 122 308 150 L308 163 L48 163 Z" fill="#D9A24B"/>
+            <path d="M112 98 L138 88 L205 88 L230 100 Z" fill="#0B0E11" opacity="0.15"/>
+        
+  <circle cx="105" cy="167" r="22" fill="#15181A"/>
+  <circle cx="105" cy="167" r="10" fill="#7C8A8A"/>
+  <circle cx="305" cy="167" r="22" fill="#15181A"/>
+  <circle cx="305" cy="167" r="10" fill="#7C8A8A"/>
+</svg>

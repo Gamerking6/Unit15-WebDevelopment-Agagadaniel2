@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylised illustration of a estate car">
+  <rect width="400" height="200" fill="none"/>
+  <ellipse cx="200" cy="172" rx="160" ry="10" fill="#0B0E11" opacity="0.08"/>
+  
+            <path d="M30 150 Q30 120 62 115 L98 88 Q120 74 150 74 L260 74 Q285 74 300 92 L330 116 Q365 118 372 150 L372 166 L30 166 Z" fill="#2F6D5C"/>
+            <path d="M106 90 L136 78 L255 78 L282 92 Z" fill="#0B0E11" opacity="0.15"/>
+        
+  <circle cx="105" cy="167" r="22" fill="#15181A"/>
+  <circle cx="105" cy="167" r="10" fill="#7C8A8A"/>
+  <circle cx="305" cy="167" r="22" fill="#15181A"/>
+  <circle cx="305" cy="167" r="10" fill="#7C8A8A"/>
+</svg>

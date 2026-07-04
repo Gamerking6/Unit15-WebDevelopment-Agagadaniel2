@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylised illustration of a coupe car">
+  <rect width="400" height="200" fill="none"/>
+  <ellipse cx="200" cy="172" rx="160" ry="10" fill="#0B0E11" opacity="0.08"/>
+  
+            <path d="M35 152 Q35 124 68 118 L108 86 Q132 72 165 72 L235 72 Q258 72 275 92 L312 118 Q350 120 358 152 L358 166 L35 166 Z" fill="#7C8A8A"/>
+            <path d="M118 88 L148 76 L228 76 L262 92 Z" fill="#0B0E11" opacity="0.15"/>
+        
+  <circle cx="105" cy="167" r="22" fill="#15181A"/>
+  <circle cx="105" cy="167" r="10" fill="#7C8A8A"/>
+  <circle cx="305" cy="167" r="22" fill="#15181A"/>
+  <circle cx="305" cy="167" r="10" fill="#7C8A8A"/>
+</svg>

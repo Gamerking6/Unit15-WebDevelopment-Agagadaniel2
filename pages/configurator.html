@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build & Price Your Car | DriveSpace</title>
+<meta name="description" content="Configure your DriveSpace car: choose model, trim, colour and wheels, and see your price and estimated range update live.">
+<meta name="keywords" content="car configurator, build your own EV, electric car price calculator">
+<link rel="canonical" href="https://www.drivespace.example/configurator.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span>DriveSpace</a>
+    <nav class="main-nav" id="primary-navigation" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogue.html">Browse Cars</a></li>
+        <li><a href="configurator.html">Build & Price</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="finance.html">Finance</a></li>
+        <li><a href="booking.html">Book a Test Drive</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="booking.html" class="btn btn-accent btn-sm">Book a test drive</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-header">
+    <div class="container">
+      <p class="eyebrow">Build & price</p>
+      <h1>Configure your DriveSpace car</h1>
+      <p class="lede">Pick a model, then make it yours. Your price and estimated range update as you go &mdash; nothing is hidden until checkout.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="configurator">
+        <div>
+
+          <div class="config-step">
+            <h3><span class="step-num">1</span>Choose your model</h3>
+            <div class="option-grid" id="modelOptions" role="radiogroup" aria-label="Choose your model"></div>
+          </div>
+
+          <div class="config-step">
+            <h3><span class="step-num">2</span>Choose your trim</h3>
+            <div class="option-grid" id="trimOptions" role="radiogroup" aria-label="Choose your trim"></div>
+          </div>
+
+          <div class="config-step">
+            <h3><span class="step-num">3</span>Choose your colour</h3>
+            <div class="option-grid" id="colourOptions" role="radiogroup" aria-label="Choose your colour"></div>
+          </div>
+
+          <div class="config-step">
+            <h3><span class="step-num">4</span>Choose your wheels</h3>
+            <div class="option-grid" id="wheelOptions" role="radiogroup" aria-label="Choose your wheels"></div>
+          </div>
+
+        </div>
+
+        <aside class="config-summary" aria-labelledby="summary-heading">
+          <h3 id="summary-heading">Your build</h3>
+          <p style="font-family:var(--font-mono);font-size:0.85rem;color:var(--sage-light);" id="summaryModelName">&mdash;</p>
+
+          <div class="summary-line"><span>Base price</span><span id="sumBase">&pound;0</span></div>
+          <div class="summary-line"><span>Trim</span><span id="sumTrim">&pound;0</span></div>
+          <div class="summary-line"><span>Colour</span><span id="sumColour">&pound;0</span></div>
+          <div class="summary-line"><span>Wheels</span><span id="sumWheels">&pound;0</span></div>
+
+          <div class="summary-total">
+            <span>Total price</span>
+            <span class="amount" id="sumTotal">&pound;0</span>
+          </div>
+
+          <div class="range-readout">
+            <span class="rr-label">Estimated range</span>
+            <div class="rr-value" id="sumRange">0 miles</div>
+          </div>
+
+          <div style="margin-top:var(--space-md);display:flex;flex-direction:column;gap:0.6rem;">
+            <a href="#" id="bookBtn" class="btn btn-accent btn-block">Book a test drive</a>
+            <a href="#" id="financeBtn" class="btn btn-ghost-light btn-block">Check finance options</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="color:var(--paper);"><span class="brand-mark" aria-hidden="true"></span>DriveSpace</a>
+        <p style="color:var(--sage-light);margin-top:1rem;max-width:32ch;">A Manchester showroom built around one job: helping you choose your first &mdash; or next &mdash; electric or hybrid car with confidence.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="catalogue.html">Browse cars</a></li>
+          <li><a href="configurator.html">Build & price</a></li>
+          <li><a href="compare.html">Compare models</a></li>
+          <li><a href="finance.html">Finance calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>DriveSpace</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="booking.html">Book a test drive</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit us</h4>
+        <ul>
+          <li>Oxford Road, Manchester</li>
+          <li>M1 5QA</li>
+          <li>Mon&ndash;Sat, 9am&ndash;6pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0;">&copy; 2026 DriveSpace. Coursework project for educational purposes &mdash; not a real dealership.</p>
+      <p style="margin:0;">All vehicle illustrations are original artwork. No real manufacturer data is used.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const initialId = params.get("id") || VEHICLES[0].id;
+
+  const state = {
+    vehicle: getVehicleById(initialId) || VEHICLES[0],
+    trimId: null,
+    colourId: COLOURS[0].id,
+    wheelId: WHEELS[0].id
+  };
+  state.trimId = state.vehicle.trims[0].id;
+
+  const modelOptions = document.getElementById("modelOptions");
+  const trimOptions = document.getElementById("trimOptions");
+  const colourOptions = document.getElementById("colourOptions");
+  const wheelOptions = document.getElementById("wheelOptions");
+
+  function renderModels() {
+    modelOptions.innerHTML = VEHICLES.map(v => `
+      <button type="button" class="option-card ${v.id === state.vehicle.id ? "selected" : ""}" data-model="${v.id}" role="radio" aria-checked="${v.id === state.vehicle.id}">
+        <span class="name">${v.name}</span>
+        <span class="add">${formatGBP(v.basePrice)}</span>
+      </button>
+    `).join("");
+  }
+
+  function renderTrims() {
+    trimOptions.innerHTML = state.vehicle.trims.map(t => `
+      <button type="button" class="option-card ${t.id === state.trimId ? "selected" : ""}" data-trim="${t.id}" role="radio" aria-checked="${t.id === state.trimId}">
+        <span class="name">${t.name}</span>
+        <span class="add">${t.priceAdd === 0 ? "Included" : "+" + formatGBP(t.priceAdd)}</span>
+        <span class="blurb">${t.blurb}</span>
+      </button>
+    `).join("");
+  }
+
+  function renderColours() {
+    colourOptions.innerHTML = COLOURS.map(c => `
+      <button type="button" class="option-card ${c.id === state.colourId ? "selected" : ""}" data-colour="${c.id}" role="radio" aria-checked="${c.id === state.colourId}">
+        <span class="swatch" style="background:${c.hex};"></span>
+        <span class="name">${c.name}</span>
+        <span class="add">${c.priceAdd === 0 ? "Included" : "+" + formatGBP(c.priceAdd)}</span>
+      </button>
+    `).join("");
+  }
+
+  function renderWheels() {
+    wheelOptions.innerHTML = WHEELS.map(w => `
+      <button type="button" class="option-card ${w.id === state.wheelId ? "selected" : ""}" data-wheel="${w.id}" role="radio" aria-checked="${w.id === state.wheelId}">
+        <span class="name">${w.name}</span>
+        <span class="add">${w.priceAdd === 0 ? "Included" : "+" + formatGBP(w.priceAdd)}</span>
+      </button>
+    `).join("");
+  }
+
+  function currentTrim() { return state.vehicle.trims.find(t => t.id === state.trimId); }
+  function currentColour() { return COLOURS.find(c => c.id === state.colourId); }
+  function currentWheel() { return WHEELS.find(w => w.id === state.wheelId); }
+
+  function updateSummary() {
+    const trim = currentTrim();
+    const colour = currentColour();
+    const wheel = currentWheel();
+
+    document.getElementById("summaryModelName").textContent = `${state.vehicle.name} — ${trim.name}`;
+    document.getElementById("sumBase").textContent = formatGBP(state.vehicle.basePrice);
+    document.getElementById("sumTrim").textContent = trim.priceAdd ? "+" + formatGBP(trim.priceAdd) : "Included";
+    document.getElementById("sumColour").textContent = colour.priceAdd ? "+" + formatGBP(colour.priceAdd) : "Included";
+    document.getElementById("sumWheels").textContent = wheel.priceAdd ? "+" + formatGBP(wheel.priceAdd) : "Included";
+
+    const total = state.vehicle.basePrice + trim.priceAdd + colour.priceAdd + wheel.priceAdd;
+    document.getElementById("sumTotal").textContent = formatGBP(total);
+
+    // Performance wheels trade a little real-world range for grip — a realistic, simple penalty
+    const wheelPenalty = wheel.id === "performance" ? 0.06 : wheel.id === "sport" ? 0.03 : 0;
+    const estRange = Math.round(state.vehicle.range * (1 - wheelPenalty));
+    document.getElementById("sumRange").textContent = `${estRange} miles`;
+
+    document.getElementById("bookBtn").href = `booking.html?id=${state.vehicle.id}`;
+    document.getElementById("financeBtn").href = `finance.html?id=${state.vehicle.id}&price=${total}`;
+  }
+
+  modelOptions.addEventListener("click", e => {
+    const btn = e.target.closest("[data-model]");
+    if (!btn) return;
+    state.vehicle = getVehicleById(btn.dataset.model);
+    state.trimId = state.vehicle.trims[0].id;
+    renderModels(); renderTrims(); updateSummary();
+  });
+  trimOptions.addEventListener("click", e => {
+    const btn = e.target.closest("[data-trim]");
+    if (!btn) return;
+    state.trimId = btn.dataset.trim;
+    renderTrims(); updateSummary();
+  });
+  colourOptions.addEventListener("click", e => {
+    const btn = e.target.closest("[data-colour]");
+    if (!btn) return;
+    state.colourId = btn.dataset.colour;
+    renderColours(); updateSummary();
+  });
+  wheelOptions.addEventListener("click", e => {
+    const btn = e.target.closest("[data-wheel]");
+    if (!btn) return;
+    state.wheelId = btn.dataset.wheel;
+    renderWheels(); updateSummary();
+  });
+
+  renderModels(); renderTrims(); renderColours(); renderWheels(); updateSummary();
+</script>
+</body>
+</html>
